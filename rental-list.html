@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>租房列表 - 优生活</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="优生活">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="rental-list.html" class="active">租房</a></li>
+                <li><a href="#">二手房</a></li>
+                <li><a href="#">新房</a></li>
+                <li><a href="#">资讯</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="#" class="login-btn">登录/注册</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 搜索筛选区 -->
+    <section class="filter-section">
+        <div class="search-bar">
+            <input type="text" placeholder="请输入小区或地址">
+            <button class="search-btn">搜索</button>
+        </div>
+        <div class="filters">
+            <div class="filter-group">
+                <span class="filter-label">区域：</span>
+                <a href="#" class="active">不限</a>
+                <a href="#">东城</a>
+                <a href="#">西城</a>
+                <a href="#">朝阳</a>
+                <a href="#">海淀</a>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">租金：</span>
+                <a href="#" class="active">不限</a>
+                <a href="#">1500以下</a>
+                <a href="#">1500-2000</a>
+                <a href="#">2000-3000</a>
+                <a href="#">3000-4500</a>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">户型：</span>
+                <a href="#" class="active">不限</a>
+                <a href="#">一室</a>
+                <a href="#">两室</a>
+                <a href="#">三室</a>
+                <a href="#">四室及以上</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 房源列表 -->
+    <section class="house-list">
+        <div class="house-item">
+            <a href="house-detail.html" class="house-img">
+                <img src="images/house1.jpg" alt="房源图片">
+            </a>
+            <div class="house-info">
+                <h3><a href="house-detail.html">海淀方寓西四小两居 全南向采光好 精装修</a></h3>
+                <div class="house-tags">
+                    <span>2室1厅</span>
+                    <span>89㎡</span>
+                    <span>南北通透</span>
+                </div>
+                <div class="house-price">
+                    <span class="price">5200</span>
+                    <span class="unit">元/月</span>
+                </div>
+            </div>
+        </div>
+        <!-- 更多房源项目 -->
+    </section>
+
+    <!-- 分页 -->
+    <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">下一页</a>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">了解优生活</a>
+                <a href="#">加入我们</a>
+                <a href="#">联系我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">网站地图</a>
+            </div>
+            <div class="contact-info">
+                <p>客服热线：4008-220-220（9:30-24:00）</p>
+                <p>Copyright © 2024 优生活 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
