@@ -12,7 +12,7 @@
         <nav class="nav-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/logo.png" alt="优生活">
+                    <img src="images/logo_2.png" alt="优生活">
                 </a>
             </div>
             <ul class="nav-links">
@@ -29,6 +29,14 @@
     </header>
 
     <!-- 房源详情 -->
+    <div class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span>/</span>
+        <a href="rental-list.html">租房</a>
+        <span>/</span>
+        <span class="current">房源详情</span>
+    </div>
+
     <div class="detail-container">
         <h1 class="house-title">海淀方寓西四小两居 全南向采光好 精装修</h1>
         
@@ -36,13 +44,30 @@
             <!-- 左侧图片展示 -->
             <div class="house-gallery">
                 <div class="main-image">
-                    <img src="images/house-large.jpg" alt="房源大图">
+                    <img src="img-house/01-01.jpg" alt="房源大图" class="active">
+                    <img src="img-house/01-02.jpg" alt="房源大图2">
+                    <img src="img-house/01-03.jpg" alt="房源大图3">
+                    <img src="img-house/01-04.jpg" alt="房源大图4">
+                </div>
+                <div class="image-switch-controls">
+                    <div class="image-progress-line active"><div class="progress"></div></div>
+                    <div class="image-progress-line"><div class="progress"></div></div>
+                    <div class="image-progress-line"><div class="progress"></div></div>
+                    <div class="image-progress-line"><div class="progress"></div></div>
                 </div>
                 <div class="thumbnail-list">
-                    <img src="images/house-thumb1.jpg" alt="缩略图1">
-                    <img src="images/house-thumb2.jpg" alt="缩略图2">
-                    <img src="images/house-thumb3.jpg" alt="缩略图3">
-                    <img src="images/house-thumb4.jpg" alt="缩略图4">
+                    <div class="thumbnail-item active" data-index="0">
+                        <img src="img-house/01-01.jpg" alt="缩略图1">
+                    </div>
+                    <div class="thumbnail-item" data-index="1">
+                        <img src="img-house/01-02.jpg" alt="缩略图2">
+                    </div>
+                    <div class="thumbnail-item" data-index="2">
+                        <img src="img-house/01-03.jpg" alt="缩略图3">
+                    </div>
+                    <div class="thumbnail-item" data-index="3">
+                        <img src="img-house/01-04.jpg" alt="缩略图4">
+                    </div>
                 </div>
             </div>
 
@@ -78,7 +103,7 @@
 
                 <div class="contact-box">
                     <div class="agent-info">
-                        <img src="images/agent-avatar.jpg" alt="经纪人头像">
+                        <img src="images/user.png" alt="经纪人头像">
                         <span class="agent-name">张小姐</span>
                         <span class="agent-phone">18501012345</span>
                     </div>
@@ -111,9 +136,71 @@
             </div>
             <div class="contact-info">
                 <p>客服热线：4008-220-220（9:30-24:00）</p>
-                <p>Copyright © 2024 优生活 All Rights Reserved</p>
+                <p>Copyright 2024 优生活 All Rights Reserved</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        class ImageSlider {
+            constructor() {
+                this.images = document.querySelectorAll('.main-image img');
+                this.progressLines = document.querySelectorAll('.image-progress-line');
+                this.thumbnails = document.querySelectorAll('.thumbnail-item');
+                this.currentIndex = 0;
+                this.intervalTime = 3000; // 3 seconds
+
+                // Add click event listeners to thumbnails
+                this.thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', () => {
+                        const index = parseInt(thumbnail.dataset.index);
+                        this.switchImage(index);
+                        this.resetAutoSlide();
+                    });
+                });
+
+                this.startAutoSlide();
+            }
+
+            switchImage(index) {
+                // Remove active class from all images, progress lines, and thumbnails
+                this.images.forEach(img => img.classList.remove('active'));
+                this.progressLines.forEach(line => line.classList.remove('active'));
+                this.thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+                // Add active class to selected image, progress line, and thumbnail
+                this.images[index].classList.add('active');
+                this.progressLines[index].classList.add('active');
+                this.thumbnails[index].classList.add('active');
+                this.currentIndex = index;
+            }
+
+            nextImage() {
+                const nextIndex = (this.currentIndex + 1) % this.images.length;
+                this.switchImage(nextIndex);
+            }
+
+            startAutoSlide() {
+                this.slideInterval = setInterval(() => {
+                    this.nextImage();
+                }, this.intervalTime);
+            }
+
+            resetAutoSlide() {
+                // Stop and restart the auto-slide when a thumbnail is clicked
+                clearInterval(this.slideInterval);
+                this.startAutoSlide();
+            }
+
+            stopAutoSlide() {
+                clearInterval(this.slideInterval);
+            }
+        }
+
+        // Initialize the slider when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = new ImageSlider();
+        });
+    </script>
 </body>
 </html>

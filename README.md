@@ -1,3 +1,36 @@
-# house-shop-homework
+# 房源商城 (House Shop) 项目
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/guomengtao/house-shop-homework)
+## 项目描述
+这是一个现代化的房源展示和租赁平台，提供直观、美观的房源浏览体验。
+
+## 最新版本更新 (v1.1.0)
+### 新特性
+- 添加广告轮播立方体动画效果
+- 实现房源详情页图片轮播功能
+- 优化缩略图交互体验
+- 增加图片自动切换和手动选择功能
+
+### 功能特点
+- 响应式设计
+- 动态图片轮播
+- 交互式缩略图
+- 平滑的动画效果
+
+## 技术栈
+- HTML5
+- CSS3
+- JavaScript
+- 响应式设计
+
+## 如何运行
+1. 克隆仓库
+2. 直接用浏览器打开 `index.html`
+
+## 预览
+![项目预览](screenshot.png)
+
+## 作者
+[Your Name]
+
+## 许可证
+MIT License
